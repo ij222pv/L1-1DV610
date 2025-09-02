@@ -12,14 +12,15 @@ nameForm.addEventListener("submit", async function (event) {
   event.preventDefault();
   const formData = new FormData(nameForm);
   const name = formData.get("name") as string;
-  const normalizedName = removeAccents(name.trim().toLowerCase()).replace(/[^a-z]/g, "");
+  const normalizedName = removeAccents(
+    name
+      .trim()
+      .toLowerCase()
+  ).replace(/[^a-z]/g, "");
   const maxNumberOfLetters = Math.floor(
-    (physicsBox.width + LETTER_SPACING) / (LETTER_SIZE + LETTER_SPACING)
+    physicsBox.width / (LETTER_SIZE + LETTER_SPACING)
   );
-  const stringToDisplay = `hej ${normalizedName}`.slice(
-    0,
-    maxNumberOfLetters
-  );
+  const stringToDisplay = `hej ${normalizedName}`.slice(0, maxNumberOfLetters);
 
   for (let i = 0; i < stringToDisplay.length; i++) {
     const letter: string = stringToDisplay[i];
