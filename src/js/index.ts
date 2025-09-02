@@ -16,7 +16,7 @@ nameForm.addEventListener("submit", async function (event) {
     name
       .trim()
       .toLowerCase()
-  ).replace(/[^a-z]/g, "");
+  ).replace(/[^a-z\s]/g, "");
   const maxNumberOfLetters = Math.floor(
     physicsBox.width / (LETTER_SIZE + LETTER_SPACING)
   );
