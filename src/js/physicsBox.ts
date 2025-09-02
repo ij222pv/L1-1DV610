@@ -35,24 +35,6 @@ export default class PhysicsBox {
         WALL_WIDTH,
         { isStatic: true }
       ),
-      // left
-      Matter.Bodies.rectangle(
-        -WALL_WIDTH / 2,
-        this.height / 2,
-        WALL_WIDTH,
-        this.height * 1.5,
-        {
-          isStatic: true,
-        }
-      ),
-      // right
-      Matter.Bodies.rectangle(
-        this.width + WALL_WIDTH / 2,
-        this.height / 2,
-        WALL_WIDTH,
-        this.height * 1.5,
-        { isStatic: true }
-      ),
     ];
 
     Matter.Composite.add(this.engine.world, walls);
